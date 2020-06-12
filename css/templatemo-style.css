@@ -134,8 +134,7 @@ a:focus {
 #hero {
   background-image: url(../img/the-town-bg-01.jpg);
   background-repeat: no-repeat;
-  height: 100vh;
-  min-height: 375px;
+
   position: relative;
 }
 
