@@ -2,7 +2,8 @@
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
 <body style="margin: 0px; overflow: hidden;"> 
 	<a-scene embedded arjs='sourceType: webcam;'>		
-			<a-sphere position="0 1 0" radius="0.5" material="color: red"></a-sphere>
-		<a-marker-camera preset='hero'></a-marker-camera>
+		<a-marker preset='hiro'>
+			<a-entity obj-model="obj: url('/iphone.obj'); mtlÇ url('/iphone.mtl')"></a-entity>
+		</a-marker>
 	</a-scene>
 </body>
