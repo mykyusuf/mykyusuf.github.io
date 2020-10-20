@@ -47,18 +47,7 @@ AFRAME.registerComponent("gesture-handler", {
     if (this.isVisible) {
 
             
-      if (this.data.rotationFactor<0) {
-        setTimeout(() => {
-                alert('duck');
-                lantern.setAttribute('gltf-model',"https://raw.githubusercontent.com/mykyusuf/mykyusuf.github.io/master/halo.glb");
-            }, 3000);
-      }
-      else if (this.data.rotationFactor>0) {
-        setTimeout(() => {
-                alert('duck');
-                lantern.setAttribute('gltf-model',"https://raw.githubusercontent.com/mykyusuf/mykyusuf.github.io/master/kutu.glb");
-            }, 3000);
-      }
+      lantern.setAttribute('gltf-model',"https://raw.githubusercontent.com/mykyusuf/mykyusuf.github.io/master/kutu.glb");
       //this.el.object3D.rotation.y +=
       //  event.detail.positionChange.x * this.data.rotationFactor;
       //this.el.object3D.rotation.x +=
@@ -68,7 +57,10 @@ AFRAME.registerComponent("gesture-handler", {
   },
 
   handleScale: function (event) {
+    var lantern = document.getElementById('bowser-model');
+
     if (this.isVisible) {
+      lantern.setAttribute('gltf-model',"https://raw.githubusercontent.com/mykyusuf/mykyusuf.github.io/master/halo.glb");
       this.scaleFactor *=
         1 + event.detail.spreadChange / event.detail.startSpread;
 
