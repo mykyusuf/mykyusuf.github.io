@@ -1,20 +1,69 @@
 <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
 <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+<script type="text/javascript">
+  sceneEl.addEventListener("markerFound", (e) => {
+    isMarkerVisible = true;
+});
+
+sceneEl.addEventListener("markerLost", (e) => {
+    isMarkerVisible = false;
+});
+
+ handleRotation(event) {
+    if (isMarkerVisible) {
+      el.object3D.rotation.y +=
+        event.detail.positionChange.x * rotationFactor;
+
+      el.object3D.rotation.x +=
+        event.detail.positionChange.y * rotationFactor;
+    }
+  }
+  handleScale(event) {
+    if (isMarkerVisible) {
+      this.scaleFactor *=
+        1 + event.detail.spreadChange / event.detail.startSpread;
+
+      this.scaleFactor = Math.min(
+        Math.max(this.scaleFactor, this.data.minScale),
+        this.data.maxScale
+      );
+
+      el.object3D.scale.x = scaleFactor * initialScale.x;
+      el.object3D.scale.y = scaleFactor * initialScale.y;
+      el.object3D.scale.z = scaleFactor * initialScale.z;
+    }
+  }
+</script>
 
 <body style='margin : 0px; overflow: hidden;'>
-  <a-scene embedded arjs>
-  	<a-assets>
-    <a-asset-item id="airplane_asset_mtl" src="https://raw.githubusercontent.com/erincones/objviewer/master/model/suzanne/suzanne.mtl">    
-      </a-asset-item>
-      <a-asset-item id="airplane_asset_obj" src="https://raw.githubusercontent.com/erincones/objviewer/master/model/suzanne/suzanne.obj">  
-      </a-asset-item>
-      
-    </a-assets>
-
-    <a-marker preset="hiro">
-      <a-entity obj-model="obj: #airplane_asset_obj ; mtl: #airplane_asset_mtl" scale="1 1 1"></a-entity>
-    </a-marker>
-
-    <a-entity camera></a-entity>
-  </a-scene>
+  <a-scene
+  arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+  embedded
+  renderer="logarithmicDepthBuffer: true;"
+  vr-mode-ui="enabled: false"
+  gesture-detector
+  id="scene"
+>
+  <a-nft
+    type="nft"
+    url="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/trex-image/trex"
+    smooth="true"
+    smoothCount="10"
+    smoothTolerance=".01"
+    smoothThreshold="5"
+    raycaster="objects: .clickable"
+    emitevents="true"
+    cursor="fuse: false; rayOrigin: mouse;"
+  >
+    <a-entity
+      gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
+      scale="5 5 5"
+      position="50 150 0"
+      class="clickable"
+      gesture-handler="minScale: 0.25; maxScale: 10"
+    >
+    </a-entity>
+  </a-nft>
+  <a-entity camera></a-entity>
+</a-scene>
 </body>
