@@ -52,6 +52,9 @@ AFRAME.registerComponent("gesture-handler", {
       //this.el.object3D.rotation.x +=
       //  event.detail.positionChange.y * this.data.rotationFactor;
     }
+    else{
+        document.getElementById('bowser-model').setAttribute('gltf-model',"https://raw.githubusercontent.com/mykyusuf/mykyusuf.github.io/master/halo.glb");
+    }
     
   },
 
