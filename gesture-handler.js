@@ -42,11 +42,10 @@ AFRAME.registerComponent("gesture-handler", {
 
   handleRotation: function (event) {
 
-    var lantern = document.getElementById('bowser-model');
 
     if (this.isVisible) {
 
-        lantern.setAttribute('gltf-model',"https://raw.githubusercontent.com/mykyusuf/mykyusuf.github.io/master/kutu.glb");
+        document.getElementById('bowser-model').setAttribute('gltf-model',"https://raw.githubusercontent.com/mykyusuf/mykyusuf.github.io/master/kutu.glb");
       
       //this.el.object3D.rotation.y +=
       //  event.detail.positionChange.x * this.data.rotationFactor;
