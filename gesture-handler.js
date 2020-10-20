@@ -47,6 +47,12 @@ AFRAME.registerComponent("gesture-handler", {
       this.el.object3D.rotation.x +=
         event.detail.positionChange.y * this.data.rotationFactor;
     }
+    if (event.detail.positionChange.y>0) {
+      alarm("yukari");
+    }
+    else {
+      alarm("asagi");
+    }
   },
 
   handleScale: function (event) {
