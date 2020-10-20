@@ -42,12 +42,18 @@ AFRAME.registerComponent("gesture-handler", {
 
   handleRotation: function (event) {
 
+    var lantern = document.getElementById('bowser-model');
+
     if (this.isVisible) {
-      document.getElementById('bowser-model').setAttribute('gltf-model',"https://raw.githubusercontent.com/mykyusuf/mykyusuf.github.io/master/halo.glb");
-      this.el.object3D.rotation.y +=
-        event.detail.positionChange.x * this.data.rotationFactor;
-      this.el.object3D.rotation.x +=
-        event.detail.positionChange.y * this.data.rotationFactor;
+
+            setTimeout(() => {
+                alert('duck');
+                lantern.setAttribute('gltf-model',"https://raw.githubusercontent.com/mykyusuf/mykyusuf.github.io/master/halo.glb");
+            }, 3000);
+      //this.el.object3D.rotation.y +=
+      //  event.detail.positionChange.x * this.data.rotationFactor;
+      //this.el.object3D.rotation.x +=
+      //  event.detail.positionChange.y * this.data.rotationFactor;
     }
     
   },
