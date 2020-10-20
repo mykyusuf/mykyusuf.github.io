@@ -43,7 +43,8 @@ AFRAME.registerComponent("gesture-handler", {
   handleRotation: function (event) {
 
     if (this.isVisible) {
-      alert("yusuf");
+
+      document.getElementById("bowser").setAttribute("src", "https://raw.githubusercontent.com/mykyusuf/mykyusuf.github.io/master/halo.glb");
 
       this.el.object3D.rotation.y +=
         event.detail.positionChange.x * this.data.rotationFactor;
