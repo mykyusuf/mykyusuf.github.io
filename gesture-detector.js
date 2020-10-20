@@ -58,7 +58,6 @@ AFRAME.registerComponent("gesture-detector", {
     }
 
     if (gestureStarted) {
-      alert("asdsad");
       currentState.startTime = performance.now();
 
       currentState.startPosition = currentState.position;
