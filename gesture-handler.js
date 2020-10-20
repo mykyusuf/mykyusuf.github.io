@@ -45,13 +45,8 @@ AFRAME.registerComponent("gesture-handler", {
     var lantern = document.getElementById('bowser-model');
 
     if (this.isVisible) {
-
-      if (lattern.getAttribute("gltf-model").equals("https://raw.githubusercontent.com/mykyusuf/mykyusuf.github.io/master/kutu.glb")) {
-        lantern.setAttribute('gltf-model',"https://raw.githubusercontent.com/mykyusuf/mykyusuf.github.io/master/halo.glb");
-      }
-      else{
-        lantern.setAttribute('gltf-model',"https://raw.githubusercontent.com/mykyusuf/mykyusuf.github.io/master/kutu.glb");
-      }
+      alert(lattern.getAttribute("gltf-model"));
+      
       
       //this.el.object3D.rotation.y +=
       //  event.detail.positionChange.x * this.data.rotationFactor;
