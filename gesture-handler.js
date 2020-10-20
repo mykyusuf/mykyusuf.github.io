@@ -46,10 +46,19 @@ AFRAME.registerComponent("gesture-handler", {
 
     if (this.isVisible) {
 
-            setTimeout(() => {
+            
+      if (event.detail.positionChange.x<50) {
+        setTimeout(() => {
                 alert('duck');
                 lantern.setAttribute('gltf-model',"https://raw.githubusercontent.com/mykyusuf/mykyusuf.github.io/master/halo.glb");
             }, 3000);
+      }
+      else if (event.detail.positionChange.x>50) {
+        setTimeout(() => {
+                alert('duck');
+                lantern.setAttribute('gltf-model',"https://raw.githubusercontent.com/mykyusuf/mykyusuf.github.io/master/kutu.glb");
+            }, 3000);
+      }
       //this.el.object3D.rotation.y +=
       //  event.detail.positionChange.x * this.data.rotationFactor;
       //this.el.object3D.rotation.x +=
