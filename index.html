@@ -36,15 +36,23 @@ sceneEl.addEventListener("markerLost", (e) => {
 </script>
 
 <body style='margin : 0px; overflow: hidden;'>
-  <a-scene
-  arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+  <a-scene arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
   embedded
   renderer="logarithmicDepthBuffer: true;"
   vr-mode-ui="enabled: false"
   gesture-detector
-  id="scene"
->
-  <a-nft
+  id="scene">
+
+  	<a-assets>
+    <a-asset-item id="airplane_asset_mtl" src="https://raw.githubusercontent.com/erincones/objviewer/master/model/suzanne/suzanne.mtl">    
+      </a-asset-item>
+      <a-asset-item id="airplane_asset_obj" src="https://raw.githubusercontent.com/erincones/objviewer/master/model/suzanne/suzanne.obj">  
+      </a-asset-item>
+      
+    </a-assets>
+
+    <a-marker preset="hiro">
+    <a-nft
     type="nft"
     url="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/trex-image/trex"
     smooth="true"
@@ -55,15 +63,11 @@ sceneEl.addEventListener("markerLost", (e) => {
     emitevents="true"
     cursor="fuse: false; rayOrigin: mouse;"
   >
-    <a-entity
-      gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
-      scale="5 5 5"
-      position="50 150 0"
-      class="clickable"
-      gesture-handler="minScale: 0.25; maxScale: 10"
-    >
-    </a-entity>
-  </a-nft>
-  <a-entity camera></a-entity>
-</a-scene>
+      <a-entity obj-model="obj: #airplane_asset_obj ; mtl: #airplane_asset_mtl" scale="1 1 1" class="clickable"
+      gesture-handler="minScale: 0.25; maxScale: 10"></a-entity>
+      </a-nft>
+    </a-marker>
+
+    <a-entity camera></a-entity>
+  </a-scene>
 </body>
