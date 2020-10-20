@@ -47,7 +47,7 @@ AFRAME.registerComponent("gesture-handler", {
       this.el.object3D.rotation.x +=
         event.detail.positionChange.y * this.data.rotationFactor;
     }
-    alarm("asdasd");
+    alert("asdasd");
   },
 
   handleScale: function (event) {
