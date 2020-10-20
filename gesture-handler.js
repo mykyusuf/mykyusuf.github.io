@@ -47,7 +47,7 @@ AFRAME.registerComponent("gesture-handler", {
     if (this.isVisible) {
 
             
-      if (event.detail.positionChange.x<50) {
+      if (event.detail.positionChange.x< -50) {
         setTimeout(() => {
                 alert('duck');
                 lantern.setAttribute('gltf-model',"https://raw.githubusercontent.com/mykyusuf/mykyusuf.github.io/master/halo.glb");
