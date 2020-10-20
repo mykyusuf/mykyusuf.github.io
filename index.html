@@ -4,14 +4,15 @@
 <body style='margin : 0px; overflow: hidden;'>
   <a-scene embedded arjs>
   	<a-assets>
-      <a-asset-item id="airplane_asset_obj" src="https://raw.githubusercontent.com/mykyusuf/mykyusuf.github.io/master/model.obj">  
+    <a-asset-item id="airplane_asset_mtl" src="https://raw.githubusercontent.com/erincones/objviewer/master/model/suzanne/suzanne.mtl">    
       </a-asset-item>
-      <a-asset-item id="airplane_asset_mtl" src="https://raw.githubusercontent.com/mykyusuf/mykyusuf.github.io/master/model.mtl">    
+      <a-asset-item id="airplane_asset_obj" src="https://raw.githubusercontent.com/erincones/objviewer/master/model/suzanne/suzanne.obj">  
       </a-asset-item>
+      
     </a-assets>
 
     <a-marker preset="hiro">
-      <a-entity obj-model="obj: #airplane_asset_obj ; mtl: #airplane_asset_mtl" scale="0.1 0.1 0.1"></a-entity>
+      <a-entity obj-model="obj: #airplane_asset_obj ; mtl: #airplane_asset_mtl" scale="1 1 1"></a-entity>
     </a-marker>
 
     <a-entity camera></a-entity>
