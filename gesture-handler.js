@@ -46,7 +46,7 @@ AFRAME.registerComponent("gesture-handler", {
 
     if (this.isVisible) {
 
-      if (lattern.getAttribute("gltf-model")=="https://raw.githubusercontent.com/mykyusuf/mykyusuf.github.io/master/kutu.glb") {
+      if (lattern.getAttribute("gltf-model").equals("https://raw.githubusercontent.com/mykyusuf/mykyusuf.github.io/master/kutu.glb")) {
         lantern.setAttribute('gltf-model',"https://raw.githubusercontent.com/mykyusuf/mykyusuf.github.io/master/halo.glb");
       }
       else{
