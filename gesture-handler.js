@@ -62,7 +62,6 @@ AFRAME.registerComponent("gesture-handler", {
   },
 
   handleScale: function (event) {
-    var lantern = document.getElementById('bowser-model');
 
     if (this.isVisible) {
       this.scaleFactor *=
