@@ -47,13 +47,13 @@ AFRAME.registerComponent("gesture-handler", {
     if (this.isVisible) {
 
             
-      if (event.detail.positionChange.x<0) {
+      if (this.data.rotationFactor<0) {
         setTimeout(() => {
                 alert('duck');
                 lantern.setAttribute('gltf-model',"https://raw.githubusercontent.com/mykyusuf/mykyusuf.github.io/master/halo.glb");
             }, 3000);
       }
-      else if (event.detail.positionChange.x>0) {
+      else if (this.data.rotationFactor>0) {
         setTimeout(() => {
                 alert('duck');
                 lantern.setAttribute('gltf-model',"https://raw.githubusercontent.com/mykyusuf/mykyusuf.github.io/master/kutu.glb");
